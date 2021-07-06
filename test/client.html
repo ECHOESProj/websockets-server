@@ -1,0 +1,22 @@
+<script>
+    // Create WebSocket connection.
+    const socket = new WebSocket('ws://localhost:3000?token=test_token');
+
+    // Connection opened
+    socket.addEventListener('open', function (event) {
+        socket.send(JSON.stringify({
+            //token: ''
+            instrument: 'S2_MSI_L1C',
+            processing_module: 'ndvi_s2',
+            polygon: 'POLYGON ((-6.485367 52.328206, -6.326752 52.328206, -6.326752 52.416241, -6.485367 52.416241, -6.485367 52.328206))',
+            start: '2021-01-10',
+            stop: '2021-01-11',
+            cloud_cover: 90            
+        }));
+    });
+
+    // Listen for messages
+    socket.addEventListener('message', function (event) {
+        console.log(JSON.parse(event.data));
+    });
+</script>
