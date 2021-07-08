@@ -13,6 +13,7 @@ wss.on('connection', ws => {
 
   ws.on('message', message => {
     message = JSON.parse(message);
+    console.log(JSON.stringify(message, null, 2));
 
     // use spawn so that args are pass in an array and are escaped
     const args = [
@@ -90,5 +91,6 @@ server.on('upgrade', function upgrade(request, socket, head) {
 
 });
 
-console.log(`Listening on port: ${PORT}`)
+console.log(`Listening on port: ${PORT}`);
+console.log('process.env.WEBAPIKEY', process.env.WEBAPIKEY)
 server.listen(PORT);
