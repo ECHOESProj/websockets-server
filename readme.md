@@ -4,7 +4,7 @@ Build:
 
 Example:
 
-    docker run -p 3000:3000 -v /var/run/docker.sock:/var/run/docker.sock -e WEBAPIKEY=xxx websocketsserver
+    docker run -p 3000:3000 -v /var/run/docker.sock:/var/run/docker.sock -e WEBAPIKEY=test_token websocketsserver
 
 
 Deploy:
@@ -15,4 +15,4 @@ Deploy:
 
     #remote:
     unzip deploy.zip -d websocketsserver
-    docker build websocketsserver --network host
+    docker build websocketsserver -t websocketsserver --network host
