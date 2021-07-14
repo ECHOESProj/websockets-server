@@ -91,6 +91,12 @@ server.on('upgrade', function upgrade(request, socket, head) {
 
 });
 
+server.on('request', function request(req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.write('health');
+  res.end();
+});
+
 console.log(`Listening on port: ${PORT}`);
 console.log('process.env.WEBAPIKEY', process.env.WEBAPIKEY)
 server.listen(PORT);
