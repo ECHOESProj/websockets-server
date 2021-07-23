@@ -19,7 +19,7 @@ wss.on('connection', ws => {
     const args = [
       'run',
       '-v', '/var/run/docker.sock:/var/run/docker.sock',
-      '-v', 'eo-vol:/data',
+      //'-v', 'eo-vol:/data',
       '--network', 'host',
       allowedDockerImages.find(v => v === message.image) || 'invalid',
       message.instrument,
