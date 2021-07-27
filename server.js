@@ -26,7 +26,7 @@ wss.on('connection', ws => {
       message.processing_module,
       message.polygon,
       message.start,
-      message.stop
+      message.end
     ];
 
     if (message.optional) {
