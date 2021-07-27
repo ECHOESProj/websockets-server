@@ -18,6 +18,7 @@ wss.on('connection', ws => {
     // use spawn so that args are pass in an array and are escaped
     const args = [
       'run',
+      '--rm',
       '-v', '/var/run/docker.sock:/var/run/docker.sock',
       //'-v', 'eo-vol:/data',
       '--network', 'host',
