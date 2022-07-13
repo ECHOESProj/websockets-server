@@ -7,7 +7,7 @@ const wss = new WebSocket.Server({ noServer: true });
 
 const PORT = 3000;
 
-const allowedDockerImages = ['eo', 'eom'];
+const allowedDockerImages = ['eo-custom-scripts', 'eo-processors'];
 
 wss.on('connection', ws => {
 
